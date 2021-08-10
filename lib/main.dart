@@ -38,124 +38,187 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
 
     return Scaffold(
+      resizeToAvoidBottomInset: true,
       appBar: AppBar(
 
         title: Text(widget.title),
       ),
-      body: Center(
+      body: SingleChildScrollView(
+        child: Center(
 
-        child: GridView(
-          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 3),
-          children: [
-            Container(
-              color: Colors.green,
+          child: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.center,
 
-              // margin: const EdgeInsets.all(16.0),
-            ),
-            Container(
-              color: Colors.red,
+              children: [
+                ///GridView
+                Row(
+                  children: [
+                    Expanded(
 
-              margin: const EdgeInsets.all(16.0),
-            ),
-            ///
-            Container(
-              color: Colors.red,
-              margin: const EdgeInsets.all(16.0),
-            ),
-            Container(
-              color: Colors.green,
-              margin: const EdgeInsets.all(16.0),
-            ),
-            ///
-            Container(
-              color: Colors.green,
-              margin: const EdgeInsets.all(16.0),
-            ),
-            Container(
-              color: Colors.red,
-              margin: const EdgeInsets.all(16.0),
-            ),
-            ///
-            Container(
-              color: Colors.red,
-              margin: const EdgeInsets.all(16.0),
-            ),
-            Container(
-              color: Colors.green,
-              margin: const EdgeInsets.all(16.0),
-            ),
+                      child: SizedBox(
+                        height: 300,
+                        child: GridView(
+                          shrinkWrap: true,
+                          physics: const BouncingScrollPhysics(),
+                          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 3),
+                          children: [
+                            Container(
+                              color: Colors.green,
 
-            Container(
-              color: Colors.green,
-              margin: const EdgeInsets.all(16.0),
+                              margin: const EdgeInsets.all(8.0),
+                            ),
+                            Container(
+                              color: Colors.red,
+
+                              margin: const EdgeInsets.all(8.0),
+                            ),
+                            ///
+                            Container(
+                              color: Colors.red,
+                              margin: const EdgeInsets.all(8.0),
+                            ),
+                            Container(
+                              color: Colors.green,
+                              margin: const EdgeInsets.all(8.0),
+                            ),
+                            ///
+                            Container(
+                              color: Colors.green,
+                              margin: const EdgeInsets.all(8.0),
+                            ),
+                            Container(
+                              color: Colors.red,
+                              margin: const EdgeInsets.all(8.0),
+                            ),
+                            ///
+                            Container(
+                              color: Colors.red,
+                              margin: const EdgeInsets.all(8.0),
+                            ),
+                            Container(
+                              color: Colors.green,
+                              margin: const EdgeInsets.all(8.0),
+                            ),
+
+                            Container(
+                              color: Colors.green,
+                              margin: const EdgeInsets.all(8.0),
+                            ),
+                            Container(
+                              color: Colors.red,
+                              margin: const EdgeInsets.all(8.0),
+                            ),
+                            ///
+                            Container(
+                              color: Colors.red,
+                              margin: const EdgeInsets.all(8.0),
+                            ),
+                            Container(
+                              color: Colors.green,
+                              margin: const EdgeInsets.all(8.0),
+                            ),
+                            ///
+                            Container(
+                              color: Colors.green,
+                              margin: const EdgeInsets.all(8.0),
+                            ),
+                            Container(
+                              color: Colors.red,
+                              margin: const EdgeInsets.all(8.0),
+                            ),
+                            ///
+                            Container(
+                              color: Colors.red,
+                              margin: const EdgeInsets.all(8.0),
+                            ),
+                            Container(
+                              color: Colors.green,
+                              margin: const EdgeInsets.all(8.0),
+                            ),
+                            Container(
+                              color: Colors.green,
+                              margin: const EdgeInsets.all(8.0),
+                            ),
+                            Container(
+                              color: Colors.red,
+                              margin: const EdgeInsets.all(8.0),
+                            ),
+                            ///
+                            Container(
+                              color: Colors.red,
+                              margin: const EdgeInsets.all(8.0),
+                            ),
+                            Container(
+                              color: Colors.green,
+                              margin: const EdgeInsets.all(8.0),
+                            ),
+                            Container(
+                              color: Colors.green,
+                              margin: const EdgeInsets.all(8.0),
+                            ),
+                            Container(
+                              color: Colors.red,
+                              margin: const EdgeInsets.all(8.0),
+                            ),
+                            ///
+                            Container(
+                              color: Colors.red,
+                              margin: const EdgeInsets.all(8.0),
+                            ),
+                            Container(
+                              color: Colors.green,
+                              margin: const EdgeInsets.all(8.0),
+                            ),
+                            ///
+                          ],
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+                Row(
+                  children: const[
+                     Divider(height: 4.0,),
+                  ],
+                ),
+
+                ///
+                Row(
+
+                  /// GridView count
+                  children: [
+                    Expanded(
+                      child: SizedBox(
+                        height: 300,
+
+                        child: GridView.count(
+
+                          scrollDirection: Axis.horizontal,
+                          crossAxisCount: 2,
+                          // Generate 100 widgets that display their index in the List.
+                          children: List.generate(30, (index) {
+                            return Card(
+                              margin: const EdgeInsets.all(8.0),
+                              color: Colors.amberAccent,
+                              child: Center(
+                                child: Text(
+                                  'Item $index',
+                                  style: Theme.of(context).textTheme.headline5,
+                                ),
+                              ),
+                            );
+                          }),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ],
             ),
-            Container(
-              color: Colors.red,
-              margin: const EdgeInsets.all(16.0),
-            ),
-            ///
-            Container(
-              color: Colors.red,
-              margin: const EdgeInsets.all(16.0),
-            ),
-            Container(
-              color: Colors.green,
-              margin: const EdgeInsets.all(16.0),
-            ),
-            ///
-            Container(
-              color: Colors.green,
-              margin: const EdgeInsets.all(16.0),
-            ),
-            Container(
-              color: Colors.red,
-              margin: const EdgeInsets.all(16.0),
-            ),
-            ///
-            Container(
-              color: Colors.red,
-              margin: const EdgeInsets.all(16.0),
-            ),
-            Container(
-              color: Colors.green,
-              margin: const EdgeInsets.all(16.0),
-            ),
-            Container(
-              color: Colors.green,
-              margin: const EdgeInsets.all(16.0),
-            ),
-            Container(
-              color: Colors.red,
-              margin: const EdgeInsets.all(16.0),
-            ),
-            ///
-            Container(
-              color: Colors.red,
-              margin: const EdgeInsets.all(16.0),
-            ),
-            Container(
-              color: Colors.green,
-              margin: const EdgeInsets.all(16.0),
-            ),
-            Container(
-              color: Colors.green,
-              margin: const EdgeInsets.all(16.0),
-            ),
-            Container(
-              color: Colors.red,
-              margin: const EdgeInsets.all(16.0),
-            ),
-            ///
-            Container(
-              color: Colors.red,
-              margin: const EdgeInsets.all(16.0),
-            ),
-            Container(
-              color: Colors.green,
-              margin: const EdgeInsets.all(16.0),
-            ),
-            ///
-          ],
+          ),
         ),
       ),
   // This trailing comma makes auto-formatting nicer for build methods.
